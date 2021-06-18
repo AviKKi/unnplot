@@ -1,0 +1,61 @@
+{
+  "name": "wigxel-nextjs-boilerplate",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint --fix . && echo 'Lint complete.'",
+    "watch": "watch 'clear && npm run -s lint' pages components"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^1.0.0",
+    "@nivo/bar": "^0.70.1",
+    "@nivo/core": "^0.70.1",
+    "@wigxel/react-components": "^1.2.0",
+    "@wigxel/utils": "^1.0.8",
+    "axios": "^0.21.1",
+    "chart.js": "^3.3.2",
+    "date-fns": "^2.16.1",
+    "next": "^10.0.5",
+    "postcss": "^8.2.4",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.0.5",
+    "ramda": "^0.27.1",
+    "ramda-fantasy": "^0.8.0",
+    "react": "^17.0.1",
+    "react-chartjs-2": "^3.0.3",
+    "react-dom": "^17.0.1",
+    "react-hook-form": "^6.14.2",
+    "recharts": "^2.0.9",
+    "styled-components": "^5.0.1",
+    "tailwindcss": "^2.0.2",
+    "yup": "^0.32.8"
+  },
+  "devDependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "autoprefixer": "^10.2.1",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "babel-plugin-styled-components": "^1.10.7",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "husky": "^4.2.1",
+    "watch": "^1.0.2"
+  },
+  "keywords": [
+    "wigxel",
+    "boilerplate",
+    "nextjs"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "clear && npm run -s lint",
+      "pre-push": "clear && npm run -s build"
+    }
+  }
+}
