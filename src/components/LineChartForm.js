@@ -67,9 +67,7 @@ const LineChartForm = ({ meta, tableId }) => {
       <div className="mt-3">
         <Button onClick={handleChartGenerate}>Generate Line Chart</Button>
       </div>
-      {iframeUrl && (
-        <UrlDisplay url={iframeUrl} />
-      )}
+      {iframeUrl && <UrlDisplay url={iframeUrl} />}
       <div className="flex w-full mt-10 justify-center">
         <iframe width="400px" height="400px" src={iframeUrl}></iframe>
       </div>

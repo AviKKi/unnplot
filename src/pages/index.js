@@ -12,9 +12,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className="min-h-screen w-screen md:w-2/3 flex items-center">
+      <main className="min-h-screen px-6 md:px-0 w-screen md:w-2/3 flex items-center">
         <div className="flex flex-col justify-start flex-1">
-          <h1 className="text-6xl py-2 font-semibold">
+          <h1 className="text-3xl md:text-6xl py-2 font-semibold">
             Embed graphs in your Notion docs
           </h1>
           <h3>Notion tables to beautiful diagrams.</h3>

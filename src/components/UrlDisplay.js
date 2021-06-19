@@ -12,17 +12,17 @@ const UrlDisplay = ({ url }) => {
 
   return (
     <>
-      <p className='text-gray-600 mt-3'>
+      <p className="text-gray-600 mt-3">
         Use this url to embed a plot in your notion docs <br />
       </p>
       <span
         onClick={copyHandler}
-        className='cursor-pointer bg-blue-100 p-2 rounded my-2'
+        className="cursor-pointer bg-blue-100 p-2 rounded my-2"
       >
         {url}
         <br />
-        <span className='mt-2 text-sm text-gray-600 flex items-center'>
-          <AiOutlineCopy className='mr-2 mt-0' /> Click to Copy
+        <span className="mt-2 text-sm text-gray-600 flex items-center">
+          <AiOutlineCopy className="mr-2 mt-0" /> Click to Copy
         </span>
       </span>
       <ToastContainer />
