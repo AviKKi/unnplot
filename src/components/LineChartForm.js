@@ -2,7 +2,7 @@ import { useState } from "react"
 
 import { H2 } from "./PlotForm"
 import Button from "./Button"
-
+import UrlDisplay from "./UrlDisplay"
 const groupByFiels = ["select", "text"]
 
 function useInputState(initialState) {
@@ -11,20 +11,20 @@ function useInputState(initialState) {
   return [state, handleChange]
 }
 
-const PieChartForm = ({ meta, tableId }) => {
+const LineChartForm = ({ meta, tableId }) => {
   const [groupBy, setGroupBy] = useInputState()
   const [valueField, setValueField] = useInputState()
   const [iframeUrl, setIframeUrl] = useState("")
   const handleChartGenerate = () => {
     if (!groupBy || !valueField) return
     setIframeUrl(
-      `https://unnplot.vercel.app/plot/pie/9fbddb475fb449c7af754f059c4ca6e3?groupBy=${groupBy}&valueField=${valueField}`
+      `https://unnplot.vercel.app/plot/line/9fbddb475fb449c7af754f059c4ca6e3?labelField=${groupBy}&valueFields=${valueField}`
     )
   }
   if (!meta || !tableId) return <></>
   return (
     <>
-      <H2>Customize your Pie Chart</H2>
+      <H2>Customize your Line Chart</H2>
       <p className="text-lg">Groupby</p>
       <p className="text-gray-600">
         All rows with same value in this column will be added together; only
@@ -65,17 +65,10 @@ const PieChartForm = ({ meta, tableId }) => {
           ))}
       </select>
       <div className="mt-3">
-        <Button onClick={handleChartGenerate}>Generate Pie Chart</Button>
+        <Button onClick={handleChartGenerate}>Generate Line Chart</Button>
       </div>
       {iframeUrl && (
-        <>
-          <p className="text-gray-600 mt-3">
-            Use this url to embed a plot in your notion docs <br />
-          </p>
-          <span className="cursor-pointer bg-blue-100 p-2 rounded my-2">
-            {iframeUrl}
-          </span>
-        </>
+        <UrlDisplay url={iframeUrl} />
       )}
       <div className="flex w-full mt-10 justify-center">
         <iframe width="400px" height="400px" src={iframeUrl}></iframe>
@@ -84,4 +77,4 @@ const PieChartForm = ({ meta, tableId }) => {
   )
 }
 
-export default PieChartForm
+export default LineChartForm
