@@ -18,7 +18,7 @@ const LineChartForm = ({ meta, tableId }) => {
   const handleChartGenerate = () => {
     if (!groupBy || !valueField) return
     setIframeUrl(
-      `https://unnplot.vercel.app/plot/line/9fbddb475fb449c7af754f059c4ca6e3?labelField=${groupBy}&valueFields=${valueField}`
+      `https://unnplot.vercel.app/plot/line/${tableId}?labelField=${groupBy}&valueFields=${valueField}`
     )
   }
   if (!meta || !tableId) return <></>
