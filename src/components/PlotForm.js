@@ -47,7 +47,6 @@ const PlotForm = () => {
       setUrlColor("border-red-300")
     }
   }
-
   return (
     <div
       id="plotFormSection"

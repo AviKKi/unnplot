@@ -18,7 +18,7 @@ const BarChartForm = ({ meta, tableId }) => {
   const handleChartGenerate = () => {
     if (!groupBy || !valueField) return
     setIframeUrl(
-      `https://unnplot.vercel.app/plot/bar/9fbddb475fb449c7af754f059c4ca6e3?groupBy=${groupBy}&valueField=${valueField}`
+      `https://unnplot.vercel.app/plot/bar/${tableId}?groupBy=${groupBy}&valueField=${valueField}`
     )
   }
   if (!meta || !tableId) return <></>
