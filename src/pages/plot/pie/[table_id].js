@@ -5,11 +5,11 @@ import { getStaticProps, getStaticPaths } from "../../../utils"
 
 const options = {
   scales: {
-    yAxes: [],
-  },
+    yAxes: []
+  }
 }
 
-function buildPieData(data, groupBy, valueField) {
+function buildPieData (data, groupBy, valueField) {
   console.log(groupBy, valueField)
   if (!data) return
   const labels = []
@@ -20,11 +20,12 @@ function buildPieData(data, groupBy, valueField) {
       labels.push(row.fields[groupBy])
       values[row.fields[groupBy]] = 0
     }
-    values[row.fields[groupBy]] += parseFloat(row.fields[valueField])
+    const value = parseFloat(row.fields[valueField])
+    if (value) values[row.fields[groupBy]] += value
   }
   return {
     labels,
-    data: labels.map((l) => values[l]),
+    data: labels.map(l => values[l])
   }
 }
 
@@ -48,21 +49,21 @@ const Chart = ({ tableData }) => {
           "rgba(255, 206, 86, 0.6)",
           "rgba(75, 192, 192, 0.6)",
           "rgba(153, 102, 255, 0.6)",
-          "rgba(255, 159, 64, 0.6)",
-        ],
-      },
-    ],
+          "rgba(255, 159, 64, 0.6)"
+        ]
+      }
+    ]
   }
   return (
-    <div className="relative w-96 h-96">
+    <div className='relative w-96 h-96'>
       <a
-        href="/"
-        className="absolute right-0 -bottom-3 shadow-md rounded-sm px-3 py-1 hover:shadow-xl hover:scale-125 duration-300 bg-white"
+        href='/'
+        className='absolute right-0 -bottom-3 shadow-md rounded-sm px-3 py-1 hover:shadow-xl hover:scale-125 duration-300 bg-white'
       >
         {" "}
         powered by UnnPlot
       </a>
-      <div className="">{tableData && <Pie data={data} />}</div>
+      <div className=''>{tableData && <Pie data={data} />}</div>
     </div>
   )
 }

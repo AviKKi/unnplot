@@ -20,7 +20,8 @@ function buildPieData(data, groupBy, valueField) {
       labels.push(row.fields[groupBy])
       values[row.fields[groupBy]] = 0
     }
-    values[row.fields[groupBy]] += parseFloat(row.fields[valueField])
+    const value = parseFloat(row.fields[valueField])
+    if (value) values[row.fields[groupBy]] += value
   }
   return {
     labels,
