@@ -6,8 +6,9 @@ import { ThemeProvider } from "@wigxel/react-components"
 import TagManager from "react-gtm-module"
 
 const tagManagerArgs = {
-  id: "G-HXGHE3RCG5",
+  gtmId: "G-HXGHE3RCG5",
 }
+
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }) {
   useEffect(() => {
